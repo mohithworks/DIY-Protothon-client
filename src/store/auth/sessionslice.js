@@ -1,26 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export const initialState = {}
+
 export const sessionSlice = createSlice({
 	name: 'auth/session',
-	initialState: {
-        token: '',
-        signedIn: false,
-    },
+	initialState,
 	reducers: {
-        onSignInSuccess: (state, action) => {
-            state.signedIn = true
-            state.token = action.payload.access_token
-        },
-        onSignOutSuccess: (state) => {
-            state.signedIn = false
-            state.token = ''
-        },
-        setToken: (state, action) =>  {
-            state.token = action.payload
-        }
+        setSession: (_, action) => action.payload,
+        sessionLoggedOut: () => initialState,
 	},
 })
 
-export const { onSignInSuccess, onSignOutSuccess, setToken } = sessionSlice.actions
+export const { setSession, sessionLoggedOut } = sessionSlice.actions
 
 export default sessionSlice.reducer

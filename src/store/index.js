@@ -13,6 +13,8 @@ const rootReducer = (asyncReducers) => (state, action) => {
     return combinedReducer(state, action)
 }
 
+const middlewares = [];
+
 const pC = { 
     key: 'root',
     storage,
@@ -21,6 +23,11 @@ const pC = {
 const pR = persistReducer(pC, rootReducer())
 
 export const store = configureStore({
-    reducer: pR
+    reducer: pR,
+	middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+        immutableCheck: false,
+        serializableCheck: false,
+    }).concat(middlewares),
 });
 export const persistor = persistStore(store);
