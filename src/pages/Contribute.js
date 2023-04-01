@@ -22,7 +22,7 @@ function Contribute() {
     setbtnLoading(true)
     const options = {
         method: 'POST',
-        url: 'https://x7n2z8-4000.csb.app/create-contribution',
+        url: 'https://diy-protothon-server.onrender.com/create-contribution',
         body: JSON.stringify({}),
         params: {
             amount: amount

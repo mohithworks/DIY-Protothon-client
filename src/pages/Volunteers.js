@@ -163,8 +163,8 @@ function Volunteers() {
             )
             :
             (
-            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-10 mt-10'> 
-                <TableContainer>
+            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-10 mt-10 w-full'> 
+                <TableContainer sx={{ maxWidth: 500 }}>
                     <Table sx={{ minWidth: 500 }}>
                         <TableHead>
                         <TableRow>

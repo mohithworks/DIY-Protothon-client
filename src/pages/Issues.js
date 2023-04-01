@@ -23,7 +23,6 @@ function Issues() {
   const [issueForm, setissueForm] = useState(false);
   const [voters, setVoters] = useState([]);
   const [volunteers, setVolunteers] = useState([]);
-  const [issuePhase, setIssuePhase] = useState(true);
   const [voteLoading, setvoteLoading] = useState(false);
   const [volLoading, setvolLoading] = useState(false);
   const [errorColor, seterrorColor] = useState('red');
@@ -84,7 +83,6 @@ function Issues() {
               }
             }else {
                   setExpire(true);
-                  setIssuePhase(false);
             }
             
         }
@@ -287,14 +285,6 @@ function Issues() {
             <div>
                 <Button variant="contained" color="primary" onClick={() => setissueForm(true)}>Post an Issue</Button>
             </div>
-            )
-        }
-        {
-            !issuePhase && (
-                <div className='flex-1 justify-center items-center mt-10'>
-                    <h1 className='font-bold text-2xl'>Issue Phase Over</h1>
-                </div>
-                    
             )
         }
         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-10 mt-10'> 
