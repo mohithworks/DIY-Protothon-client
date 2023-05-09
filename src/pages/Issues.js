@@ -59,9 +59,6 @@ function Issues() {
                             console.log(res.data)
                             setIssues([res.data[0]]);
                         }
-                    }else {
-                        setExpire(true);
-                        alert("Posting Issue time is over")
                     }
                 });
               }else {
@@ -287,7 +284,7 @@ function Issues() {
             </div>
             )
         }
-        <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-10 mt-10'> 
+        <div className='self-center gap-10 mt-10'> 
         {
             !issueForm && issues && issues.map((issue) => ( 
                 <Card key={issue.id} sx={{ maxWidth: 345, maxHeight: 500 }}>
